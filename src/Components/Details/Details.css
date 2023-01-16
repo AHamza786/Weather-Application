@@ -1,0 +1,37 @@
+.details{
+   display: flex;
+   flex-direction: column;
+   padding: 30px 14px 0 14px;
+   justify-content: center;
+   align-items: center;
+}
+.details .atmosphare{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+ }
+
+ .details .atmosphare .atmoInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+ }
+ .atmosphare .atmoInfo .icontitle{
+   display: flex;
+   align-items: center;
+   gap: 6px;
+ }
+ .details .atmosphare .atmoInfo p{
+    font-size: 10px;
+    font-family: 'Poppins',sans-serif;
+ }
+ .atmosphare .atmoInfo img{
+    height: 15px;
+    width: 15px;
+ }
+ .atmosphare img {
+    height: 10px;
+    width: 10px;
+ }

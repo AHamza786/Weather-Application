@@ -1,0 +1,34 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 43px;
+    padding: 43px 94px;
+    box-sizing: border-box;
+    height: calc(100vh - 122px);
+    backdrop-filter: blur(128px);
+    overflow: auto;
+    flex-wrap: wrap;
+ }
+ .main::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .main::-webkit-scrollbar-track {
+    backdrop-filter: blur(128px);
+    border-radius: 100px;
+  }
+  
+  .main::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 100px;
+  }
+
+ @media only screen and (max-width: 840px) {
+    .main{
+        flex-direction: column;
+        gap: 20px;
+        height: calc(100% - 165px);  
+     }
+ }

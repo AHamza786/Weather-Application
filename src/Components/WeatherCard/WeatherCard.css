@@ -1,0 +1,136 @@
+.weatherCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ #buttonload{
+   background-color: none;
+   color: none;
+ }
+ .cardContainer #buttonload i {
+   background-color: #04AA6D;
+   border: none; 
+   color: white; 
+   padding: 12px 16px; 
+   font-size: 30px ;
+   font-family: 'Poppins',sans-serif;
+ }
+ .cardContainer{
+   border-radius: 24px;
+   width: 280px;
+   height: 370px;
+   background: #00000033;
+   backdrop-filter: blur(16px);
+    position: relative;
+    color: white;
+   display: flex;
+   flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+ .vector{
+   position: absolute;
+    right: 20px;
+    top: 20px;
+ }
+ .vector img{
+    cursor: pointer;
+    height: 18px;
+    width: 4px;
+ }
+ 
+.LocaDate .city{
+   font-family: 'Poppins';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 16px;
+   line-height: 20px;
+   margin: 0;
+}
+.LocaDate .date{
+   line-height: 20px;
+   margin: 0;
+   font-weight: 400;
+   font-size: x-small;
+    font-family: 'Poppins',sans-serif;
+}
+ .info{
+    display: flex;
+    gap: 8px;
+    padding: 0 14px;
+    align-items: center;
+    margin-right: 80px;
+ }
+ .info .icon img{
+    height: 60px;
+    width: 60px;
+ }
+ .info .LocaDate{
+    line-height: 0px; 
+ }
+ 
+ .weatherCard .weather{
+    line-height: 0px;
+ }
+ .weatherCard .weather p{
+    font-weight: lighter;
+    font-size: small;
+    text-align: center;
+    font-family: 'Poppins',sans-serif;
+ }
+ .weatherCard .weather .temp{
+   display: flex;
+    font-size: 80px;
+    font-family: 'Poppins',sans-serif;
+    position: relative;
+ }
+ .weatherCard .weather .temp::after{
+   content: "°C";
+    font-weight: 300;
+    font-size: 15px;
+    font-family: 'Poppins',sans-serif;
+    position: absolute;
+    right: -10px;
+    bottom: 42px;
+ }
+ 
+ .dropDown{
+   background-color: non;
+   color:black;
+   position: absolute;
+   right: .5px;
+   border-radius: 5px;
+ }
+
+   .dropDown-content {
+     background-color: #EA4C89;
+     border-radius: 8px;
+     border-style: none;
+     box-sizing: border-box;
+     color: #FFFFFF;
+     cursor: pointer;
+     display: inline-block;
+     font-family: 'Poppins',sans-serif;
+     font-size: 14px;
+     font-weight: 500;
+     height: 40px;
+     line-height: 20px;
+     list-style: none;
+     margin: 0;
+     outline: none;
+     padding: 10px 16px;
+     position: relative;
+     text-align: center;
+     text-decoration: none;
+     transition: color 100ms;
+     vertical-align: baseline;
+     user-select: none;
+     -webkit-user-select: none;
+     touch-action: manipulation;
+   }
+   
+   .dropDown-content:hover,
+   .dropDown-content:focus {
+     background-color: #F082AC;
+   }
+ 

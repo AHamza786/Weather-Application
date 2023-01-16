@@ -1,0 +1,14 @@
+.container footer{
+    display: flex;
+    justify-content: center;
+    color: white;
+    backdrop-filter: blur(128px);
+    border-radius: 0 0 40px 40px ;
+ }
+ footer p{
+    font-family: 'Poppins',sans-serif;
+ }
+ footer p span img {
+    height: 12px;
+    width: 12px;
+ }

@@ -1,0 +1,41 @@
+.locationCard {
+  border-radius: 24px;
+  width: 280px;
+  height: 370px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #00000033;
+  backdrop-filter: blur(16px);
+}
+.locationCard button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.26);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.locationCard button img {
+  height: 24px;
+  width: 24px;
+}
+.locationCard p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.locationCard input{
+  padding: 6px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    background-color: lightgray;
+    color: black;
+    margin-bottom: 3px;
+}
