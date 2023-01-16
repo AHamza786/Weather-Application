@@ -27,7 +27,7 @@ function WeatherCard(props) {
       } catch (error) {
         setFound(false);
         handleDelete(name);
-        alert("City Not Found");
+        alert("City not Found");
       }
     };
     getData();
