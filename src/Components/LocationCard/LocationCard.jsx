@@ -30,6 +30,7 @@ function LocationCard() {
       <p id="city">{btn?'':'Add New Location'}</p>
       {btn && (
         <input
+          id="inputField"
           type="text"
           placeholder="Enter The City"
           onChange={(event) => {
@@ -38,7 +39,7 @@ function LocationCard() {
         />
       )}
       {btn && (
-        <input type="submit" placeholder="City" value={"Add City"} onClick={callWeatherCard} />
+        <input type="submit" placeholder="City" className="btn-input" value={"Add City"} onClick={callWeatherCard} />
       )}
     </div>
   );

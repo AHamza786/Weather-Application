@@ -81,7 +81,7 @@ function WeatherCard(props) {
             </div>
             <div className="weatherCard">
               <div className="weather">
-                <h1 className="temp">{Math.trunc(data?.main.temp)}</h1>
+                <h1 className="temp">{Math.trunc(data?.main?.temp||0)}</h1>
                 <p>{data?.weather[0]?.main}</p>
               </div>
             </div>
