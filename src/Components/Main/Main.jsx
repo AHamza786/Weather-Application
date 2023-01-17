@@ -3,6 +3,8 @@ import "./Main.css";
 import LocationCard from "../LocationCard/LocationCard";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import CardContext from "./context";
+import { Sortable } from "react-sortable";
+
 
 const getList=()=>{
   let list = localStorage.getItem('cities')
@@ -32,7 +34,6 @@ function Main() {
   return (
     <main className="main">
       {cityName?.map((item, i) => {
-        
         return (
           <WeatherCard
             name={item}

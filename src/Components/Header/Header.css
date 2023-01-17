@@ -28,7 +28,8 @@
  .temp h1 span{
     font-size: small;
  }
- .title p{
+ .title p a{
+   text-decoration: none;
     font-weight: 400;
     font-family: 'Poppins',sans-serif;
     color: white;
@@ -38,7 +39,10 @@
     gap: 15px;
  }
  .options ul li{
-    list-style-type: none;
+   list-style-type: none;
+ }
+ .options ul li a{
+   text-decoration: none;
     color: white;
     font-family: 'Poppins',sans-serif;
     cursor: pointer;
