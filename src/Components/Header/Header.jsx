@@ -2,6 +2,8 @@ import React from "react";
 import "./Header.css";
 import Logo from "../../Images/PartlyCloudy.svg";
 import { FaAlignJustify } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 
 function Header() {
   function showMenu() {
@@ -16,14 +18,15 @@ function Header() {
   }
   return (
     <header className="topHeader">
+      
       <div className="title">
         <img src={Logo} alt="Icon" />
-        <p>Weather by VicBox</p>
+        <p><Link to="/">Weather by VicBox</Link></p>
       </div>
       <div className="options" id="myoptions">
         <ul>
-          <li>Github</li>
-          <li>About</li>
+          <li><Link to="github">Github</Link></li>
+          <li><Link to="about">About</Link></li>
         </ul>
       </div>
       <div className="toggle">

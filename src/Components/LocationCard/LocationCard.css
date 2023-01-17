@@ -49,3 +49,7 @@
     border-radius: 40px;
     font-family: "Poppins", sans-serif;
 }
+.locationCard .btn-input:hover{
+  color: white;
+  background-color: black;
+}

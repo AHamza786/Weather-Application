@@ -1,0 +1,15 @@
+.github{
+    backdrop-filter: blur(128px);
+    box-sizing: border-box;
+    height: calc(100vh - 122px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.github h1{
+    color: white;
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+}

@@ -10,6 +10,7 @@ function LocationCard() {
 
 // Check City Exist or not
   const callWeatherCard = () => {
+    name=name.trim()
     name=name.charAt(0).toUpperCase() + name.slice(1);
     if(!cityName.includes(name)){
       setCityName([...cityName,name]) 
