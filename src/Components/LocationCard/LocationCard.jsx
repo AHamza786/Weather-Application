@@ -20,9 +20,14 @@ function LocationCard() {
     setBtn(false);
   };
   
+
   const addCity = () => {
     setBtn(true);
+    if(btn){
+      setBtn(false);
+    }
   };
+
   return (
     <div className="locationCard">
       <button onClick={addCity}>
@@ -40,7 +45,7 @@ function LocationCard() {
         />
       )}
       {btn && (
-        <input type="submit" placeholder="City" className="btn-input" value={"Add City"} onClick={callWeatherCard} />
+        <input type="submit" placeholder="City" className="btn-input" value={"Add City"} onClick={callWeatherCard}  />
       )}
     </div>
   );

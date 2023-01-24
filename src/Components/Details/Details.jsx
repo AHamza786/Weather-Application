@@ -34,13 +34,13 @@ function Details(props) {
             <img src={Humidity} alt="humidity" />
             <p>Humidity </p>
           </div>
-          <p>{props.human}</p>
+          <p>{props.human}KM</p>
         </div>
         <img src={Line} alt="line" />
         <div className="atmoInfo">
           <div className="icontitle">
             <img src={Wind} alt="wind" />
-            <p>Wind &nbsp; &nbsp; &nbsp; </p>
+            <p>Wind &nbsp; &nbsp; &nbsp;</p>
           </div>
 
           <p>{props.air} KM</p>

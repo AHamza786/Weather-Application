@@ -7,6 +7,7 @@ import Sunny from "../../Images/Sunny.svg";
 import Details from "../Details/Details";
 import moment from "moment/moment";
 
+
 function WeatherCard(props) {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
@@ -36,7 +37,7 @@ function WeatherCard(props) {
 
   // Current Date
   const today = new Date();
-  const date = moment(today).format("dddd MM/DD/YYYY");
+  const date = moment(today).format("ddddMM/DD/YYYY");
 
   //  Vector Button show delete button
   const showbutton = () => {
@@ -58,7 +59,7 @@ function WeatherCard(props) {
         ) : (
           <>
             <div className="vector">
-              <img src={Vector} alt="vector" onClick={showbutton} />
+              <img src={Vector} alt="vector" onClick={showbutton}/>
               {btn && (
                 <div className="dropDown">
                   <button

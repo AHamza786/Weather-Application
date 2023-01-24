@@ -6,13 +6,17 @@
  #buttonload{
    background-color: none;
    color: none;
+   
  }
  .cardContainer #buttonload i {
-   background-color: #04AA6D;
+   background-color: white;
+   backdrop-filter: blur(16px);
+   border-radius: 30px;
    border: none; 
-   color: white; 
+   color: black; 
    padding: 12px 16px; 
-   font-size: 30px ;
+   font-size: 20px ;
+   font-style: normal;
    font-family: 'Poppins',sans-serif;
  }
  .cardContainer{
