@@ -3,7 +3,10 @@ import "./Main.css";
 import LocationCard from "../LocationCard/LocationCard";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import CardContext from "./context";
+<<<<<<< HEAD
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+=======
+>>>>>>> ade1558 (last)
 
 const getList = () => {
   let list = localStorage.getItem("cities");
@@ -30,6 +33,7 @@ function Main() {
   }, [cityName]);
 
   return (
+<<<<<<< HEAD
     <DragDropContext
       onDragEnd={(...props) => {
         console.log(...props);
@@ -73,6 +77,24 @@ function Main() {
         )}
       </Droppable>
     </DragDropContext>
+=======
+    <main className="main">
+      {cityName?.map((item, i) => {
+        
+        return (
+          <WeatherCard
+            name={item}
+            key={`${i}-${item}`}
+            handleDelete={deleteWeatherCard}
+          />
+        );
+      })}
+
+      <CardContext.Provider value={{ cityName, setCityName }}>
+        <LocationCard />
+      </CardContext.Provider>
+    </main>
+>>>>>>> ade1558 (last)
   );
 }
 
