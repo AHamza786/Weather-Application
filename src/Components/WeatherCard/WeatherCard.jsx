@@ -39,6 +39,7 @@ function WeatherCard(props) {
   const date = moment(today).format("dddd MM/DD/YYYY");
 
   //  Vector Button show delete button
+  
   const showbutton = () => {
     setBtn(!btn);
   };

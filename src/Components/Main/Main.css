@@ -32,3 +32,11 @@
         height: calc(100% - 165px);  
      }
  }
+ @media only screen and (max-width: 480px) {
+  .main{
+      flex-direction: column;
+      gap: 20px;
+      height: calc(100% - 165px);
+      overflow-y: scroll;
+   }
+}
