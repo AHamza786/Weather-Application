@@ -29,6 +29,14 @@
     .main{
         flex-direction: column;
         gap: 20px;
-        height: calc(100% - 165px);  
+      height: calc(100% - 165px);  
      }
  }
+ @media only screen and (min-width: 350px) and (max-width: 420px) {
+  .main{
+      padding: 10px 0 0 0;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+   }
+}
