@@ -24,11 +24,14 @@ function LocationCard() {
     setBtn(true);
   };
   return (
-    <div className="locationCard">
+    <div className={`locationCard ${btn && `gap_16`}`}>
       <button onClick={addCity}>
         <img src={Add} alt="plus" />
       </button>
-      <p id="city">{btn?'':'Add New Location'}</p>
+      {!btn && 
+      
+      <p id="city">Add New Location</p>
+      }
       {btn && (
         <input
           id="inputField"

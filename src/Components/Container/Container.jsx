@@ -14,7 +14,7 @@ function Container() {
       <Routes>
           <Route path="/" element={<Main />} />
           <Route path="about" element={<About />} />
-          <Route path="github" element={<Github />} />
+          {/* <Route path="github" element={<Github />} /> */}
       </Routes>
       <Footer />
     </div>

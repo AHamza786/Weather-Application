@@ -23,15 +23,15 @@ function Header() {
         <img src={Logo} alt="Icon" />
         <p><Link to="/">Weather by VicBox</Link></p>
       </div>
-      <div className="options" id="myoptions">
+      {/* <div className="options" id="myoptions">
         <ul>
           <li><Link to="github">Github</Link></li>
           <li><Link to="about">About</Link></li>
         </ul>
-      </div>
-      <div className="toggle">
+      </div> */}
+      {/* <div className="toggle">
         <FaAlignJustify id="btn" onClick={showMenu} />
-      </div>
+      </div> */}
     </header>
   );
 }

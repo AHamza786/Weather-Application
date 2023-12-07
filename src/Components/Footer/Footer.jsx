@@ -10,7 +10,7 @@ function Footer() {
         <span>
           <img src={Heart} alt="heart" />
         </span>{" "}
-        by Victor Alvarado
+        by Malik
       </p>
     </footer>
   );

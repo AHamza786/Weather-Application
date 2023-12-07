@@ -50,11 +50,16 @@ function WeatherCard(props) {
     return (
       <div className="cardContainer">
         {loading ? (
-          <div id="buttonload">
-            <i>
-              <FaSpinner /> Loading
-            </i>
-          </div>
+          // <div id="buttonload">
+          //   <i>
+          //     <FaSpinner /> Loading
+          //   </i>
+          // </div>
+          <div class="loading-container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
         ) : (
           <>
             <div className="vector">

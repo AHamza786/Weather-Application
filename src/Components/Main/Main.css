@@ -27,8 +27,15 @@
 
  @media only screen and (max-width: 840px) {
     .main{
-        flex-direction: column;
+        flex-direction: row;
         gap: 20px;
         height: calc(100% - 165px);  
      }
  }
+
+ @media only screen and (max-width: 450px) {
+  .main {
+    flex-direction: column;
+    padding: 40px; 
+  }
+}
