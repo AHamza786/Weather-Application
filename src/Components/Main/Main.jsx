@@ -3,11 +3,10 @@ import "./Main.css";
 import LocationCard from "../LocationCard/LocationCard";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import CardContext from "./context";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { getAllWeatherApi } from "../../api";
 
 const getList = () => {
   let list = localStorage.getItem("cities");
-  console.log(list);
   if (list) {
     return JSON.parse(localStorage.getItem("cities"));
   } else {
@@ -17,32 +16,46 @@ const getList = () => {
 
 function Main() {
   const [cityName, setCityName] = useState(getList());
+  const [weatherData, setWeatherData] = useState([]);
 
-  const deleteWeatherCard = (item) => {
-    const newCities = cityName?.filter((city) => {
-      return city !== item;
+  const getAllWeather = async () => {
+    try {
+      const res = await getAllWeatherApi();
+      setWeatherData(res?.data)
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const deleteWeatherCard = (id) => {
+    const filteredData = weatherData?.filter((item) => {
+      return item?._id !== id;
     });
-    setCityName(newCities);
+    setWeatherData(filteredData);
   };
 
   useEffect(() => {
     localStorage.setItem("cities", JSON.stringify(cityName));
   }, [cityName]);
 
+  useEffect(()=>{
+    getAllWeather()
+  }, [])
+
   return (
     <main className="main">
-    {cityName?.map((item, i) => {
-      
+    {weatherData && weatherData?.map((item, i) => {
       return (
         <WeatherCard
-          name={item}
+          data={item}
           key={`${i}-${item}`}
           handleDelete={deleteWeatherCard}
         />
       );
     })}
 
-    <CardContext.Provider value={{ cityName, setCityName }}>
+    <CardContext.Provider value={{ cityName, setCityName, weatherData, setWeatherData }}>
       <LocationCard />
     </CardContext.Provider>
   </main>

@@ -1,66 +1,38 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import "./WeatherCard.css";
-import { FaSpinner } from "react-icons/fa";
 import Vector from "../../Images/Vector.svg";
 import Sunny from "../../Images/Sunny.svg";
 import Details from "../Details/Details";
 import moment from "moment/moment";
+import { deleteWeatherByIdApi } from "../../api";
 
 function WeatherCard(props) {
-  const [data, setData] = useState();
-  const [loading, setLoading] = useState(false);
   const [btn, setBtn] = useState(false);
   const [Found, setFound] = useState(true);
-  const {name, handleDelete} = props;
-  // Use Effect
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=5a8917c2e0acb98c4f97397486dc92d3&units=metric`
-        );
-        setLoading(false);
-        setData(response.data);
-        
-      } catch (error) {
-        setFound(false);
-        handleDelete(name);
-        alert("City not Found");
-      }
-    };
-    getData();
-    // eslint-disable-next-line
-  }, []);
+  const { data, handleDelete } = props;
 
-  // Current Date
   const today = new Date();
   const date = moment(today).format("dddd MM/DD/YYYY");
 
-  //  Vector Button show delete button
   const showbutton = () => {
     setBtn(!btn);
   };
 
-  // Show Card or Not
+  const deleteWeatherById = async (id) => {
+    try {
+      const response = await deleteWeatherByIdApi(id);
+      handleDelete(id)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
   if (!Found) {
     return;
   } else {
     return (
       <div className="cardContainer">
-        {loading ? (
-          // <div id="buttonload">
-          //   <i>
-          //     <FaSpinner /> Loading
-          //   </i>
-          // </div>
-          <div class="loading-container">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-    </div>
-        ) : (
           <>
             <div className="vector">
               <img src={Vector} alt="vector" onClick={showbutton} />
@@ -68,7 +40,7 @@ function WeatherCard(props) {
                 <div className="dropDown">
                   <button
                     className="dropDown-content"
-                    onClick={() => handleDelete(name)}
+                    onClick={() => deleteWeatherById(data?._id)}
                   >
                     Delete
                   </button>
@@ -86,18 +58,17 @@ function WeatherCard(props) {
             </div>
             <div className="weatherCard">
               <div className="weather">
-                <h1 className="temp">{Math.trunc(data?.main?.temp||0)}</h1>
-                <p>{data?.weather[0]?.main}</p>
+                <h1 className="temp">{Math.trunc(data?.temperature || 0)}</h1>
+                <p>{data?.atmosphere}</p>
               </div>
             </div>
             <Details
               visible={data?.visibility}
-              human={data?.main?.humidity}
-              Feel={data?.main?.feels_like}
-              air={data?.wind?.speed}
+              human={data?.humidity}
+              Feel={data?.feelLike}
+              air={data?.windSpeed}
             />
           </>
-        )}
       </div>
     );
   }

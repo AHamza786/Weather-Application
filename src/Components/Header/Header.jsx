@@ -10,10 +10,10 @@ function Header() {
     let x = document.getElementById("myoptions");
     if (x.style.display === "block") {
       x.style.display = "none";
-      console.log("None");
+      // console.log("None");
     } else {
       x.style.display = "block";
-      console.log("Block");
+      // console.log("Block");
     }
   }
   return (
