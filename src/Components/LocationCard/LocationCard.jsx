@@ -46,9 +46,13 @@ function LocationCard() {
   }
 
   const weatherCardHandler = () => {
-    name = name.trim().toLowerCase();
-    name = name.charAt(0).toUpperCase() + name.slice(1);
-    getWeatherData(name);
+    if(!name){
+      alert("Please Enter city name")
+    }else{
+      name = name.trim().toLowerCase();
+      name = name.charAt(0).toUpperCase() + name.slice(1);
+      getWeatherData(name);
+    }
   };
 
   const addCity = () => {

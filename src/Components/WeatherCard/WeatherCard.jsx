@@ -8,7 +8,6 @@ import { deleteWeatherByIdApi } from "../../api";
 
 function WeatherCard(props) {
   const [btn, setBtn] = useState(false);
-  const [Found, setFound] = useState(true);
   const { data, handleDelete } = props;
 
   const today = new Date();
@@ -21,57 +20,52 @@ function WeatherCard(props) {
   const deleteWeatherById = async (id) => {
     try {
       const response = await deleteWeatherByIdApi(id);
-      handleDelete(id)
+      handleDelete(id);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
-
-  if (!Found) {
-    return;
-  } else {
-    return (
-      <div className="cardContainer">
-          <>
-            <div className="vector">
-              <img src={Vector} alt="vector" onClick={showbutton} />
-              {btn && (
-                <div className="dropDown">
-                  <button
-                    className="dropDown-content"
-                    onClick={() => deleteWeatherById(data?._id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              )}
+  return (
+    <div className="cardContainer">
+      <>
+        <div className="vector">
+          <img src={Vector} alt="vector" onClick={showbutton} />
+          {btn && (
+            <div className="dropDown">
+              <button
+                className="dropDown-content"
+                onClick={() => deleteWeatherById(data?._id)}
+              >
+                Delete
+              </button>
             </div>
-            <div className="info">
-              <div className="icon">
-                <img src={Sunny} alt="Sunny Weather" />
-              </div>
-              <header className="LocaDate">
-                <p className="city">{data?.name}</p>
-                <p className="date">{date}</p>
-              </header>
-            </div>
-            <div className="weatherCard">
-              <div className="weather">
-                <h1 className="temp">{Math.trunc(data?.temperature || 0)}</h1>
-                <p>{data?.atmosphere}</p>
-              </div>
-            </div>
-            <Details
-              visible={data?.visibility}
-              human={data?.humidity}
-              Feel={data?.feelLike}
-              air={data?.windSpeed}
-            />
-          </>
-      </div>
-    );
-  }
+          )}
+        </div>
+        <div className="info">
+          <div className="icon">
+            <img src={Sunny} alt="Sunny Weather" />
+          </div>
+          <header className="LocaDate">
+            <p className="city">{data?.name}</p>
+            <p className="date">{date}</p>
+          </header>
+        </div>
+        <div className="weatherCard">
+          <div className="weather">
+            <h1 className="temp">{Math.trunc(data?.temperature || 0)}</h1>
+            <p>{data?.atmosphere}</p>
+          </div>
+        </div>
+        <Details
+          visible={data?.visibility}
+          human={data?.humidity}
+          Feel={data?.feelLike}
+          air={data?.windSpeed}
+        />
+      </>
+    </div>
+  );
 }
 
 export default WeatherCard;
