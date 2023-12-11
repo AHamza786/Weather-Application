@@ -5,39 +5,24 @@ import WeatherCard from "../WeatherCard/WeatherCard";
 import CardContext from "./context";
 import { getAllWeatherApi } from "../../api";
 
-const getList = () => {
-  let list = localStorage.getItem("cities");
-  if (list) {
-    return JSON.parse(localStorage.getItem("cities"));
-  } else {
-    return [];
-  }
-};
-
 function Main() {
-  const [cityName, setCityName] = useState(getList());
   const [weatherData, setWeatherData] = useState([]);
 
   const getAllWeather = async () => {
     try {
       const res = await getAllWeatherApi();
       setWeatherData(res?.data)
-      console.log(res);
     } catch (error) {
       console.log(error);
     }
   }
 
-  const deleteWeatherCard = (id) => {
+  const deleteWeatherCard = (name) => {
     const filteredData = weatherData?.filter((item) => {
-      return item?._id !== id;
+      return item?.name !== name;
     });
     setWeatherData(filteredData);
   };
-
-  useEffect(() => {
-    localStorage.setItem("cities", JSON.stringify(cityName));
-  }, [cityName]);
 
   useEffect(()=>{
     getAllWeather()
@@ -55,7 +40,7 @@ function Main() {
       );
     })}
 
-    <CardContext.Provider value={{ cityName, setCityName, weatherData, setWeatherData }}>
+    <CardContext.Provider value={{ weatherData, setWeatherData }}>
       <LocationCard />
     </CardContext.Provider>
   </main>

@@ -21,7 +21,7 @@ function LocationCard() {
       .then(async (response) => {
         const currentDate = new Date();
         const formattedWeatherData = {
-          name: response.data.name,
+          name: response.data.name.charAt(0).toLowerCase() + response.data.name.slice(1),
           temperature: response.data.main.temp,
           atmosphere: response.data.weather[0].main,
           feelLike: response.data.main.feels_like,

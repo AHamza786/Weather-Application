@@ -10,17 +10,14 @@ function WeatherCard(props) {
   const [btn, setBtn] = useState(false);
   const { data, handleDelete } = props;
 
-  const today = new Date();
-  const date = moment(today).format("dddd MM/DD/YYYY");
-
   const showbutton = () => {
     setBtn(!btn);
   };
 
-  const deleteWeatherById = async (id) => {
+  const deleteWeatherById = async (name) => {
     try {
-      const response = await deleteWeatherByIdApi(id);
-      handleDelete(id);
+      const response = await deleteWeatherByIdApi(name);
+      handleDelete(name);
     } catch (error) {
       console.log(error);
     }
@@ -35,7 +32,7 @@ function WeatherCard(props) {
             <div className="dropDown">
               <button
                 className="dropDown-content"
-                onClick={() => deleteWeatherById(data?._id)}
+                onClick={() => deleteWeatherById(data?.name)}
               >
                 Delete
               </button>
@@ -47,8 +44,8 @@ function WeatherCard(props) {
             <img src={Sunny} alt="Sunny Weather" />
           </div>
           <header className="LocaDate">
-            <p className="city">{data?.name}</p>
-            <p className="date">{date}</p>
+            <p className="city">{data?.name.charAt(0).toUpperCase() + data?.name.slice(1)}</p>
+            <p className="date">{data?.date}</p>
           </header>
         </div>
         <div className="weatherCard">

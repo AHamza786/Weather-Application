@@ -12,7 +12,7 @@ export const addWeatherApi = async (data) => {
     return response;
 }
 
-export const deleteWeatherByIdApi = async (id) => {
-    const response  = await axios.delete(`${BASE_URL}/weather?id=${id}`);
+export const deleteWeatherByIdApi = async (name) => {
+    const response  = await axios.delete(`${BASE_URL}/weather?cityName=${name}`);
     return response;
 }
